@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto</title>
+    <title>Gestión Administrativa de Usuarios | Brian Rivera</title>
+    <meta name="description" content="Proyecto de Gestión Administrativa de Usuarios. Aplicación web en Java con formularios y diseño XML.">
 
-    <!-- Fuente Figtree -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../estilo-proy.css">
@@ -13,31 +15,16 @@
 <body>
 
 <header class="navegacion">
-
-    <div class="logo"><img src="../../images/logo/br-blanco.svg" alt="Logo - Brian Rivera"></div>
-
-    <a class="idioma" id="btnIdioma">ES</a>
-
+    <div class="logo"><img src="../../images/logo/br-blanco.svg" alt="Logo de Brian Rivera" width="130" height="40"></div>
+    <a class="idioma" id="btnIdioma" aria-label="Cambiar idioma">ES</a>
 </header>
 
 <main class="contenedor-proyecto">
-
-    <a href="../../index.html" class="btn-regresar">
-        ←
-    </a>
+    <a href="../../index.html" class="btn-regresar" aria-label="Volver al portafolio">←</a>
 
     <header class="proyecto-header">
-        <h1 class="proyecto-titulo"
-            data-es="Gestión de Administrativa de Usuarios"
-            data-en="User Administration Management">
-            Gestión de Administrativa de Usuarios
-        </h1>
-
-        <span class="proyecto-rol"
-            data-es="Programadora principal"
-            data-en="Lead Developer">
-            Programadora principal
-        </span>
+        <h1 class="proyecto-titulo" data-es="Gestión de Administrativa de Usuarios" data-en="User Administration Management">Gestión de Administrativa de Usuarios</h1>
+        <span class="proyecto-rol" data-es="Programadora principal" data-en="Lead Developer">Programadora principal</span>
     </header>
 
     <span class="lbl-rol-desempeñado" 
@@ -55,17 +42,11 @@
     </span>
 
     <section class="banner-principal">
-        <img src="./sis1.png" class="principal" alt="Captura Sistema de Inscripción">
+        <img src="./sis1.png" class="principal" alt="Captura del Sistema de Inscripción" loading="lazy" width="800" height="450">
     </section>
 
-    <!-- TECNOLOGÍAS -->
     <section class="info-seccion">
-        <div class="etiqueta"
-            data-es="Tecnologías utilizadas"
-            data-en="Technologies Used">
-            Tecnologías utilizadas
-        </div>
-
+        <div class="etiqueta" data-es="Tecnologías utilizadas" data-en="Technologies Used">Tecnologías utilizadas</div>
         <div class="tags-contenedor">
             <span class="tag">Java</span>
             <span class="tag">Visual Studio</span>
@@ -73,14 +54,8 @@
         </div>
     </section>
 
-    <!-- COMPETENCIAS -->
     <section class="info-seccion">
-        <div class="etiqueta"
-            data-es="Competencias técnicas"
-            data-en="Technical Skills">
-            Competencias técnicas
-        </div>
-
+        <div class="etiqueta" data-es="Competencias técnicas" data-en="Technical Skills">Competencias técnicas</div>
         <div class="tags-contenedor">
             <span class="tag">UI/UX Design</span>
             <span class="tag">Form Handling</span>
@@ -88,55 +63,31 @@
         </div>
     </section>
 
-    <!-- RESULTADOS -->
     <section class="info-seccion">
-        <div class="etiqueta"
-            data-es="Resultados"
-            data-en="Results">
-            Resultados
-        </div>
-
+        <div class="etiqueta" data-es="Resultados" data-en="Results">Resultados</div>
         <div class="tags-contenedor">
-            <span class="tag"
-                data-es="Se obtuvo una web estable, funcional y sin errores críticos, con una interfaz amigable y adaptable a distintos dispositivos."
-                data-en="A stable, fully functional web was achieved, free of critical errors, with a user-friendly interface adaptable to different devices.">
-                Se obtuvo una web estable, funcional y sin errores críticos, con una interfaz amigable y adaptable a distintos dispositivos.
-            </span>
+            <span class="tag" data-es="Se obtuvo una web estable, funcional y sin errores críticos, con una interfaz amigable y adaptable a distintos dispositivos." data-en="A stable, fully functional web was achieved, free of critical errors, with a user-friendly interface adaptable to different devices.">Se obtuvo una web estable, funcional y sin errores críticos, con una interfaz amigable y adaptable a distintos dispositivos.</span>
         </div>
     </section>
 
-    <!-- EVIDENCIAS -->
     <section class="info-seccion">
-        <div class="etiqueta"
-            data-es="Evidencias claras"
-            data-en="Evidence">
-            Evidencias claras
-        </div>
-
+        <div class="etiqueta" data-es="Evidencias claras" data-en="Evidence">Evidencias claras</div>
         <div class="tags-contenedor">
-            <span class="tag"
-                data-es="Mi trabajo se evidencia en las pruebas realizadas, validación de funcionalidades y corrección de errores durante el desarrollo."
-                data-en="My work is demonstrated through testing, feature validation, and bug fixing carried out during development.">
-                Mi trabajo se evidencia en las pruebas realizadas, validación de funcionalidades y corrección de errores durante el desarrollo.
-            </span>
+            <span class="tag" data-es="Mi trabajo se evidencia en las pruebas realizadas, validación de funcionalidades y corrección de errores durante el desarrollo." data-en="My work is demonstrated through testing, feature validation, and bug fixing carried out during development.">Mi trabajo se evidencia en las pruebas realizadas, validación de funcionalidades y corrección de errores durante el desarrollo.</span>
         </div>
     </section>
 
-    <!-- GALERÍA -->
     <section class="galeria-pruebas">
-        <img src="./sis1.png" class="secundaria" alt="Sistema Inscripción - vista 1">
-        <img src="./Camaras.png" class="secundaria" alt="Sistema Inscripción - cámaras">
-        <img src="./usuarios.png" class="secundaria" alt="Sistema Inscripción - usuarios">
+        <img src="./sis1.png" class="secundaria" alt="Sistema Inscripción - vista 1" loading="lazy" width="400" height="300">
+        <img src="./Camaras.png" class="secundaria" alt="Sistema Inscripción - cámaras" loading="lazy" width="400" height="300">
+        <img src="./usuarios.png" class="secundaria" alt="Sistema Inscripción - usuarios" loading="lazy" width="400" height="300">
     </section>
 
-    <!-- FOOTER -->
     <footer class="proyecto-footer">
-        <a href="https://github.com/0Undertaker0/gestion-de-usuarios" class="btn-github">Github</a>
+        <a href="https://github.com/0Undertaker0/gestion-de-usuarios" target="_blank" rel="noopener noreferrer" class="btn-github">Github</a>
     </footer>
-
 </main>
 
 <script src="../../idioma.js"></script>
-
 </body>
 </html>

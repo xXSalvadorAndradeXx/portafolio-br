@@ -1,12 +1,9 @@
-body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--blanco);
-    color: var(--azul-oscuro);
-}
+/* ========================================
+   SECCIÓN PROYECTOS - MEJORADO
+   ======================================== */
 
-/* PROYECTOS MEJORADO */
 .proyectos {
-    padding: 100px 10%;
+    padding: clamp(50px, 8vh, 100px) clamp(15px, 5vw, 10%);
     background: linear-gradient(180deg, var(--blanco) 0%, var(--gris-claro) 100%);
 }
 
@@ -15,7 +12,7 @@ body {
 }
 
 .lbl-titulo-port {
-    font-size: 52px;
+    font-size: clamp(2rem, 5vw, 3.25rem);
     color: var(--azul-oscuro);
     font-weight: 800;
     letter-spacing: -1px;
@@ -23,33 +20,42 @@ body {
 
 .proyectos h2 {
     color: var(--azul);
-    margin-bottom: 50px;
-    font-size: 24px;
+    margin-bottom: clamp(30px, 5vw, 50px);
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
     font-weight: 500;
 }
 
 .grid-proyectos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(20px, 3vw, 35px);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .card-proyecto {
     background: white;
-    border-radius: 24px;
+    border-radius: var(--radius-lg, 24px);
     overflow: hidden;
     text-decoration: none;
     color: var(--azul-oscuro);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all var(--transition-slow, 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94));
     position: relative;
     border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-proyecto:hover {
     transform: translateY(-15px);
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
     border-color: var(--azul);
+}
+
+.card-proyecto:focus-visible {
+    outline: 2px solid var(--azul);
+    outline-offset: 4px;
 }
 
 .card-proyecto .numero {
@@ -60,7 +66,7 @@ body {
     color: white;
     padding: 8px 18px;
     border-radius: 30px;
-    font-size: 14px;
+    font-size: clamp(12px, 1.2vw, 14px);
     font-weight: 700;
     z-index: 2;
     box-shadow: 0 5px 20px rgba(234, 93, 76, 0.4);
@@ -68,7 +74,7 @@ body {
 
 .card-proyecto .img {
     overflow: hidden;
-    height: 220px;
+    height: clamp(160px, 18vw, 220px);
 }
 
 .card-proyecto .img img {
@@ -83,53 +89,77 @@ body {
 }
 
 .card-proyecto h3 {
-    padding: 25px 25px 0;
+    padding: clamp(15px, 2vw, 25px) clamp(15px, 2vw, 25px) 0;
     color: var(--azul-oscuro);
-    font-size: 22px;
+    font-size: clamp(1.125rem, 1.8vw, 1.375rem);
     font-weight: 700;
 }
 
 .card-proyecto p {
-    padding: 10px 25px 25px;
+    padding: 10px clamp(15px, 2vw, 25px) clamp(15px, 2vw, 25px);
     color: var(--azul);
     font-weight: 500;
-    font-size: 15px;
+    font-size: clamp(13px, 1.3vw, 15px);
 }
 
+/* Animación de entrada para tarjetas */
+.card-proyecto {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.card-proyecto:nth-child(1) { animation-delay: 0.1s; }
+.card-proyecto:nth-child(2) { animation-delay: 0.2s; }
+.card-proyecto:nth-child(3) { animation-delay: 0.3s; }
+
 /* RESPONSIVE */
+@media (max-width: 1024px) {
+    .grid-proyectos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .proyectos {
-        padding: 60px 5%;
+        padding: 50px 5%;
     }
     
     .lbl-titulo-port {
-        font-size: 38px;
+        font-size: 2rem;
     }
     
     .grid-proyectos {
         grid-template-columns: 1fr;
+        max-width: 450px;
         gap: 25px;
     }
     
     .card-proyecto .img {
-        height: 200px;
+        height: 180px;
     }
     
     .card-proyecto h3 {
-        font-size: 20px;
+        font-size: 1.125rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 425px) {
     .proyectos {
-        padding: 40px 20px;
+        padding: 35px 20px;
     }
     
     .lbl-titulo-port {
-        font-size: 32px;
+        font-size: 1.75rem;
     }
     
     .card-proyecto .img {
-        height: 180px;
+        height: 160px;
+    }
+    
+    .card-proyecto .numero {
+        top: 12px;
+        left: 12px;
+        padding: 6px 14px;
+        font-size: 11px;
     }
 }

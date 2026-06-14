@@ -1,9 +1,12 @@
-/* FOOTER MEJORADO */
+/* ========================================
+   FOOTER MEJORADO
+   ======================================== */
+
 .footer {
     background: linear-gradient(135deg, #2E3453 0%, #3a4268 100%);
     color: var(--blanco);
-    padding: 80px 10%;
-    margin-top: 100px;
+    padding: clamp(50px, 8vh, 80px) clamp(15px, 5vw, 10%);
+    margin-top: clamp(50px, 10vh, 100px);
     position: relative;
     overflow: hidden;
 }
@@ -13,23 +16,29 @@
     position: absolute;
     top: -30%;
     left: -10%;
-    width: 400px;
-    height: 400px;
+    width: clamp(250px, 35vw, 400px);
+    height: clamp(250px, 35vw, 400px);
     background: rgba(234, 93, 76, 0.03);
     border-radius: 50%;
+    pointer-events: none;
 }
 
 .footer-grid {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: clamp(30px, 5vw, 50px);
     position: relative;
     z-index: 1;
 }
 
+.footer-info {
+    flex: 1;
+    min-width: 250px;
+}
+
 .footer-info h3 {
-    font-size: 28px;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
     margin-bottom: 15px;
     font-weight: 700;
 }
@@ -38,7 +47,7 @@
     max-width: 500px;
     opacity: 0.8;
     line-height: 1.8;
-    font-size: 15px;
+    font-size: clamp(13px, 1.4vw, 15px);
 }
 
 .estado {
@@ -48,7 +57,7 @@
     gap: 10px;
     color: #5eea8b;
     font-weight: 600;
-    font-size: 16px;
+    font-size: clamp(14px, 1.4vw, 16px);
 }
 
 .estado .dot {
@@ -58,34 +67,25 @@
     border-radius: 50%;
     animation: pulse 2s infinite;
     box-shadow: 0 0 10px rgba(94, 234, 139, 0.5);
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(94, 234, 139, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(94, 234, 139, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(94, 234, 139, 0);
-    }
+    flex-shrink: 0;
 }
 
 .footer-links {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: clamp(12px, 1.8vw, 18px);
+    min-width: 150px;
 }
 
 .footer-links a {
     color: var(--blanco);
     text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 16px;
+    transition: all var(--transition-normal, 0.3s ease);
+    font-size: clamp(14px, 1.4vw, 16px);
     font-weight: 500;
     padding: 8px 0;
     border-bottom: 2px solid transparent;
+    width: fit-content;
 }
 
 .footer-links a:hover {
@@ -94,27 +94,40 @@
     padding-left: 10px;
 }
 
+.footer-links a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
 .footer-bottom {
-    margin-top: 60px;
+    margin-top: clamp(40px, 6vw, 60px);
     text-align: center;
-    font-size: 14px;
+    font-size: clamp(12px, 1.2vw, 14px);
     opacity: 0.6;
     position: relative;
     z-index: 1;
-    padding-top: 30px;
+    padding-top: clamp(20px, 3vw, 30px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .footer {
-        padding: 60px 5%;
+        padding: 50px 5%;
     }
     
     .footer-grid {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
+        gap: 35px;
+        align-items: center;
+    }
+    
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .footer-info p {
@@ -127,5 +140,28 @@
     
     .footer-links {
         align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .footer-links a {
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 425px) {
+    .footer {
+        padding: 40px 15px;
+    }
+    
+    .footer-links {
+        gap: 10px;
+    }
+    
+    .footer-links a {
+        font-size: 13px;
+        padding: 6px 10px;
     }
 }
