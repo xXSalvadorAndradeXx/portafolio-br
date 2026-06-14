@@ -404,8 +404,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const skillObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                skillObserver.unobserve(entry.target);
+                const el = entry.target;
+                el.classList.add('animate');
+                const fill = el.querySelector('.fill');
+                const level = el.dataset.level;
+                if (fill && level) {
+                    fill.style.width = level + '%';
+                }
+                skillObserver.unobserve(el);
             }
         });
     }, { threshold: 0.3 });
