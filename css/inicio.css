@@ -900,6 +900,7 @@ nav a.active::after {
     text-align: left;
     box-shadow: 0 10px 30px rgba(46, 52, 83, 0.06);
     transition: all var(--transition-slow);
+    overflow: visible;
 }
 
 .pub-item:hover {
@@ -927,7 +928,13 @@ nav a.active::after {
     font-size: clamp(13px, 1.4vw, 15px);
     line-height: 1.6;
     margin-bottom: 20px;
+    white-space: normal;
+    overflow: visible;
+    word-break: break-word;
 }
+
+/* Collapsible extract: show only a few lines by default */
+/* (Kept natural wrapping and visible overflow for descriptions) */
 
 .pub-link {
     color: var(--azul);
