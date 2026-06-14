@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <meta name="description" content="Portafolio de Brian Rivera: proyectos de frontend y backend, QA y desarrollo web. Cursando cuarto año de Ingeniería en Sistemas y Redes Informáticas.">
+    <meta name="keywords" content="Portafolio, Brian Rivera, Frontend, Backend, QA, proyectos, Ingeniería en Sistemas, cuarto año">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/acercami.css">
+    <link rel="stylesheet" href="css/proyectos.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+</head>
+<body>
+
+<header>
+    <img src="images/logo/br-rojo.svg" class="logo-nav" alt="Logo - Brian Rivera">
+    <nav>
+        <a href="#inicio" class="active" data-es="Inicio" data-en="Home"></a>
+        <a href="#acerca-mi" data-es="Acerca de mí" data-en="About me"></a>
+        <a href="#proyectos" data-es="Proyectos" data-en="Projects"></a>
+        <a href="#habilidades" data-es="Habilidades" data-en="Skills"></a>
+        <a href="#testimonios" data-es="Testimonios" data-en="Testimonials"></a>
+        <a href="#contacto" data-es="Contacto" data-en="Contact"></a>
+        <a href="#reconocimientos" data-es="Reconocimientos" data-en="Recognitions"></a>
+        <a href="#publicaciones" data-es="Publicaciones" data-en="Publications"></a>
+
+        <button class="language" id="btnIdioma">ES</button>
+    </nav>
+</header>
+
+<section class="inicio" id="inicio">
+
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="images/video-pc-ia.mp4" type="video/mp4">
+    </video>
+    
+
+    <div class="titulos">
+        <h1>Brian Rivera</h1>
+        <h2 data-es='Estudiante de Cuarto año de Ingeniería en <span class="lbl-sr">Sistemas y Redes</span> Informáticas.'
+            data-en='Student of Computer <span class="lbl-sr"> Systems and Networks</span> Engineering, Fourth year'></h2>
+    </div>
+    
+
+    <div class="buttons-contact">
+        <a class="btn-gmail" href="https://mail.google.com/mail/?view=cm&to=Alesolano980@gmail.com" target="_blank">
+            <svg width=20px fill=#EA5D4C version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 237.832 237.832" style="enable-background:new 0 0 237.832 237.832;" xml:space="preserve">
+            <path d="M228.977,33.916H8.854C3.969,33.916,0,37.881,0,42.771V195.06c0,4.891,3.969,8.856,8.854,8.856h220.123
+                c4.887,0,8.855-3.965,8.855-8.856V42.771C237.832,37.881,233.864,33.916,228.977,33.916z M221.026,182.184
+                c0,4.063-3.364,7.356-7.512,7.356h-12.339V73.379l-76.693,49.79c-1.687,1.096-3.627,1.641-5.566,1.641s-3.88-0.545-5.566-1.641
+                l-76.692-49.79V189.54h-12.34c-4.147,0-7.512-3.293-7.512-7.356V55.647c0-4.063,3.364-7.356,7.512-7.356h10.176l84.423,54.808
+                l84.423-54.808h10.176c4.147,0,7.512,3.293,7.512,7.356V182.184z"/>
+            </svg>
+            <span data-es="Correo Electrónico" data-en="Email"></span>
+            </a>
+
+        <a class="btn-linkedin" href="https://www.linkedin.com/in/brian-solano-4241423b4/">
+            <svg width="20px" height="20px" fill=#344FA0 viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3 1a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V3a2 2 0 00-2-2H3zm1.102 4.297a1.195 1.195 0 100-2.39 1.195 1.195 0 000 2.39zm1 7.516V6.234h-2v6.579h2zM6.43 6.234h2v.881c.295-.462.943-1.084 2.148-1.084 1.438 0 2.219.953 2.219 2.766 0 .087.008.484.008.484v3.531h-2v-3.53c0-.485-.102-1.438-1.18-1.438-1.079 0-1.17 1.198-1.195 1.982v2.986h-2V6.234z"/>
+            </svg>
+            <span data-es="LinkedIn" data-en="LinkedIn">LinkedIn</span></a>
+
+
+        <a href="https://github.com/0Undertaker0" class="btn-github">
+            <svg width="20px" height="20px" fill=#000 viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.976 0A7.977 7.977 0 000 7.976c0 3.522 2.3 6.507 5.431 7.584.392.049.538-.196.538-.392v-1.37c-2.201.49-2.69-1.076-2.69-1.076-.343-.93-.881-1.175-.881-1.175-.734-.489.048-.489.048-.489.783.049 1.224.832 1.224.832.734 1.223 1.859.88 2.3.685.048-.538.293-.88.489-1.076-1.762-.196-3.621-.881-3.621-3.964 0-.88.293-1.566.832-2.153-.05-.147-.343-.978.098-2.055 0 0 .685-.196 2.201.832.636-.196 1.322-.245 2.007-.245s1.37.098 2.006.245c1.517-1.027 2.202-.832 2.202-.832.44 1.077.146 1.908.097 2.104a3.16 3.16 0 01.832 2.153c0 3.083-1.86 3.719-3.62 3.915.293.244.538.733.538 1.467v2.202c0 .196.146.44.538.392A7.984 7.984 0 0016 7.976C15.951 3.572 12.38 0 7.976 0z" />
+            </svg>
+            <span data-es="Github" data-en="Github">Github</span></a>
+
+
+    </div>
+    
+</section>
+
+<!-- MODAL PARA IMÁGENES DE RECONOCIMIENTOS -->
+<div id="recModal" class="rec-modal" aria-hidden="true">
+    <div class="rec-modal-backdrop"></div>
+    <div class="rec-modal-content" role="dialog" aria-modal="true">
+        <button class="rec-modal-close" aria-label="Cerrar">×</button>
+        <img id="recModalImg" src="" alt="Reconocimiento ampliado">
+        <div id="recModalCaption" class="rec-modal-caption"></div>
+    </div>
+</div>
+
+<div class="phrase" 
+data-es='<span>"</span>  Transformando lógica compleja en experiencias visuales intuitivas <span>"</span>  '
+data-en='<span>"</span> Transforming complex logic into intuitive visual experiences. <span>"</span>  '>
+</div>
+
+<section class="acerca-mi" id="acerca-mi">
+    <div class="about-container">
+
+        <div class="profile-wrapper">
+            <div class="profile-bg"></div>
+
+            <div class="profile-card">
+                <img src="images/img-bria-portafolio.jpeg" class="img-br" alt="perfil">
+
+                <a class="btn-cv-download" download href="cv-brian/CV-Brian-Solano-Frontend-Backend.pdf" data-href-es="cv-brian/CV-Brian-Solano-Frontend-Backend.pdf" data-href-en="cv-brian/CV-Brian-Solano-Frontend-Backend-ingles.pdf">
+  
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+                    </svg>
+
+                    
+                    <div class="text" data-es=" Descargar CV" data-en="Download CV">
+                    </div>
+
+                </a>
+                
+            </div>
+            <div class="bg-rojo"></div>
+        </div>
+
+        <div class="about-text">
+            <h2 data-es="Acerca de mí" data-en="About me"></h2>
+            <h3>Brian Alexander Rivera Solano</h3>
+
+            <p
+            data-es="Como futuro Ingeniero en Sistemas, entiendo que una gran aplicación necesita tanto
+                un desarrollo potente como una presentación impecable. Me especializo en el desarrollo
+                frontend y backend con una fuerte orientación hacia la innovación, ya sea diseñando
+                la interfaz visual, mi objetivo es escribir código limpio que impulse proyectos escalables
+                y adaptados a las demandas del mercado actual." 
+
+            data-en="As a future Systems Engineer, I understand that a great application needs both
+                powerful development and an impeccable presentation. I specialize in
+                frontend and backend development with a strong focus on innovation. Whether designing
+                the visual interface, my goal is to write clean code that drives scalable projects
+                and adapts to the demands of today's market.">
+                
+            </p>
+
+            <div class="tag">Jr. FrontEnd y BackEnd</div>
+        </div>
+
+    </div>
+</section>
+
+<section class="skills" id="habilidades">
+    <h2 style="margin-top: 2rem; padding: 20px;  text-align: center;" 
+    data-es="Habilidades técnicas" data-en="Technical skills"></h2>
+
+    <div class="skill-list">
+        <div class="skill" data-level="95">
+            <div class="skill-top">
+                <span>HTML</span>
+            </div>
+            <div class="bar"><div class="fill"></div></div>
+        </div>
+
+        <div class="skill" data-level="90">
+            <div class="skill-top">
+                <span>CSS</span>
+            </div>
+            <div class="bar"><div class="fill"></div></div>
+        </div>
+
+        <div class="skill" data-level="85">
+            <div class="skill-top">
+                <span>JavaScript</span>
+            </div>
+            <div class="bar"><div class="fill"></div></div>
+        </div>
+
+        <div class="skill" data-level="80">
+            <div class="skill-top">
+                <span>PHP</span>
+            </div>
+            <div class="bar"><div class="fill"></div></div>
+        </div>
+
+        <div class="skill" data-level="75">
+            <div class="skill-top">
+                <span>MySQL</span>
+            </div>
+            <div class="bar"><div class="fill"></div></div>
+        </div>
+    </div>
+
+</section>
+
+<!-- PROYECTOS -->
+<section class="proyectos" id="proyectos">
+
+    <div class="titulo-port">
+        <h1 class="lbl-titulo-port" data-es="Proyectos" data-en="Projects">Proyectos</h1>
+    </div>
+
+    <h2 data-es="Proyectos educativos" data-en="Educational projects">
+        Proyectos educativos
+    </h2>
+
+    <div class="grid-proyectos">
+
+        <!-- PROYECTO 1 -->
+        <a href="proyectos/cubfinder/cubfinder.html" onclick="guardarSeccion('proyectos')" class="card-proyecto">
+            <span class="numero">01</span>
+            <div class="img">
+                <img src="proyectos/cubfinder/image1.png" alt="Cubfinder">
+            </div>
+            <h3 data-es="Cubfinder" data-en="Cubfinder">Cubfinder</h3>
+            <p data-es="Frontend + Backend + CSS" data-en="Frontend + Backend + CSS">
+                Frontend + Backend + CSS
+            </p>
+        </a>
+
+        <!-- PROYECTO 2 -->
+        <a href="proyectos/sistema-acad/sistema-academico.html" onclick="guardarSeccion('proyectos')" class="card-proyecto">
+            <span class="numero">02</span>
+            <div class="img">
+                <img src="proyectos/sistema-acad/sistema1.png" alt="Sistema Académico">
+            </div>
+            <h3 data-es="Sistema Académico" data-en="Academic System">
+                Sistema Académico
+            </h3>
+            <p data-es="Gestión de estudiantes y calificaciones" data-en="Student and grade management">
+                Gestión de estudiantes y calificaciones
+            </p>
+        </a>
+
+        <!-- PROYECTO 3 -->
+        <a href="proyectos/sistema-insc/sistema-inscripcion.html" onclick="guardarSeccion('proyectos')" class="card-proyecto">
+            <span class="numero">03</span>
+            <div class="img">
+                <img src="proyectos/sistema-insc/sis1.png" alt="Sistema de Inscripción">
+            </div>
+            <h3 data-es="Sistema de Administración de Usuarios" data-en="User Management System">
+                Sistema de Administración de Usuarios
+            </h3>
+            <p data-es="Registro y administración de Usuarios" data-en="User registration and management">
+                Registro y administración de Usuarios
+            </p>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- TESTIMONIOS -->
+<section class="testimonios" id="testimonios">
+    <div class="contenedor-testimonios">
+        <h2 data-es="Testimonios" data-en="Testimonials"></h2>
+        <p data-es="" data-en="Add testimonials from teachers, employers or clients (minimum 5)."></p>
+
+        <div class="testimonials-controls">
+            <button class="btn-slide prev" aria-label="Anterior">‹</button>
+            <button class="btn-slide next" aria-label="Siguiente">›</button>
+        </div>
+
+        <div class="grid-testimonios">
+            <div class="card-testimonio">
+                <div class="avatar-placeholder" aria-hidden="true"></div>
+                <h4 class="nombre">Pablo Flores</h4>
+                <div class="rol" data-es="Cliente" data-en="Client">Cliente</div>
+                <div class="estrellas" aria-hidden="true">★★★★★</div>
+                <p class="quote" data-es="Excelente comunicación; proyecto entregado a tiempo y con alta calidad." data-en="Excellent communication; project delivered on time and with high quality.">Excelente comunicación; proyecto entregado a tiempo y con alta calidad.</p>
+            </div>
+
+            <div class="card-testimonio">
+                <div class="avatar-placeholder" aria-hidden="true"></div>
+                <h4 class="nombre">Romeo Guerrero</h4>
+                <div class="rol" data-es="Cliente" data-en="Client">Cliente</div>
+                <div class="estrellas" aria-hidden="true">★★★★★</div>
+                <p class="quote" data-es="Profesional y atento a los detalles; resultados que superaron expectativas." data-en="Professional and detail-oriented; results exceeded expectations.">Profesional y atento a los detalles; resultados que superaron expectativas.</p>
+            </div>
+
+            <div class="card-testimonio">
+                <div class="avatar-placeholder" aria-hidden="true"></div>
+                <h4 class="nombre">Javier Colocho</h4>
+                <div class="rol" data-es="Cliente" data-en="Client">Cliente</div>
+                <div class="estrellas" aria-hidden="true">★★★★★</div>
+                <p class="quote" data-es="Soluciones prácticas y código limpio; muy recomendable." data-en="Practical solutions and clean code; highly recommended.">Soluciones prácticas y código limpio; muy recomendable.</p>
+            </div>
+
+            <div class="card-testimonio">
+                <div class="avatar-placeholder" aria-hidden="true"></div>
+                <h4 class="nombre">Jonathan Ulises</h4>
+                <div class="rol" data-es="Cliente" data-en="Client">Cliente</div>
+                <div class="estrellas" aria-hidden="true">★★★★★</div>
+                <p class="quote" data-es="Trabajo eficiente y soporte claro durante todo el desarrollo." data-en="Efficient work and clear support throughout development.">Trabajo eficiente y soporte claro durante todo el desarrollo.</p>
+            </div>
+
+            <div class="card-testimonio">
+                <div class="avatar-placeholder" aria-hidden="true"></div>
+                <h4 class="nombre">Linser Nolasco</h4>
+                <div class="rol" data-es="Cliente" data-en="Client">Cliente</div>
+                <div class="estrellas" aria-hidden="true">★★★★★</div>
+                <p class="quote" data-es="Entrega puntual y funcionalidades bien documentadas." data-en="On-time delivery and well-documented features.">Entrega puntual y funcionalidades bien documentadas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+    <div class="contenedor-contacto">
+        <h2 data-es="Contacto" data-en="Contact"></h2>
+        <p data-es="Puedes contactarme a través de las siguientes opciones." data-en="You can contact me through the options below or using the form further down."></p>
+
+        <div class="contact-grid">
+            <a class="card-contact" href="https://mail.google.com/mail/?view=cm&to=Alesolano980@gmail.com">
+                <div class="icon-circle" aria-hidden="true"><img src="images/google_mail_gmail_logo_icon_159346.webp" alt="Gmail logo"></div>
+                <div class="label" data-es="Correo" data-en="Email">Correo</div>
+                <div class="sub">Alesolano980@gmail.com</div>
+            </a>
+
+            <a class="card-contact" href="https://wa.me/50363148609" target="_blank">
+                <div class="icon-circle" aria-hidden="true"><img src="images/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.webp" alt="WhatsApp logo"></div>
+                <div class="label" data-es="WhatsApp" data-en="WhatsApp">WhatsApp</div>
+                <div class="sub" data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</div>
+            </a>
+
+            <a class="card-contact" href="tel:+503 6314 8609">
+                <div class="icon-circle" aria-hidden="true"><img src="images/pngtree-phone-icon-in-solid-circle-png-image_2380227.jpg" alt="Phone icon"></div>
+                <div class="label" data-es="Teléfono" data-en="Phone">Teléfono</div>
+                <div class="sub">+503 6314 8609</div>
+            </a>
+
+            <a class="card-contact" href="https://www.linkedin.com/in/brian-solano-4241423b4/" target="_blank">
+                <div class="icon-circle" aria-hidden="true"><img src="images/2-20625_linkedin-logo-hd-png-download.png" alt="LinkedIn logo"></div>
+                <div class="label" data-es="LinkedIn" data-en="LinkedIn">LinkedIn</div>
+                <div class="sub" data-es="Perfil profesional" data-en="Professional profile">Perfil profesional</div>
+            </a>
+
+            <a class="card-contact" href="https://github.com/0Undertaker0" target="_blank">
+                <div class="icon-circle" aria-hidden="true"><img src="images/github-2-t2z6hpd4v4di5xrcqyqzq9.webp" alt="GitHub logo"></div>
+                <div class="label" data-es="GitHub" data-en="GitHub">GitHub</div>
+                <div class="sub" data-es="Repositorios" data-en="Repositories">Repositorios</div>
+            </a>
+        </div>
+
+        <div class="social-row">
+            <a href="https://www.facebook.com/alex.solano.1010" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><img src="images/sm_5b321c969857d.jpg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/briansolano____/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><img src="images/sm_5b37de3263964.jpg" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/brian-solano-4241423b4/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><img src="images/2-20625_linkedin-logo-hd-png-download.png" alt="LinkedIn"></a>
+            <a href="https://github.com/0Undertaker0" target="_blank" aria-label="GitHub" rel="noopener noreferrer"><img src="images/github-2-t2z6hpd4v4di5xrcqyqzq9.webp" alt="GitHub"></a>
+        </div>
+
+    </div>
+</section>
+
+<!-- RECONOCIMIENTOS -->
+<section class="reconocimientos" id="reconocimientos">
+    <div class="contenedor-reconocimientos">
+        <h2 data-es="Reconocimientos" data-en="Recognitions"></h2>
+        <p data-es="Certificados y reconocimientos obtenidos durante mi formación." data-en="Certificates and recognitions obtained during my education."></p>
+
+        <div class="recon-grid">
+            <article class="card-rec">
+                <a class="rec-thumb-link" href="images/reconocimiento-1.png" data-src="images/reconocimiento-1.png" rel="noopener noreferrer">
+                    <img class="rec-thumb" src="images/reconocimiento-1.png" alt="Reconocimiento 1">
+                </a>
+                <h3 class="rec-title" data-es="Curso Pre-Intermedio: Conversación" data-en="Pre-Intermediate Course: Conversation">Pre-Intermediate Course: Conversation</h3>
+                <div class="rec-issuer" data-es="Platzi" data-en="Platzi">Platzi</div>
+                <div class="rec-year" data-es="Aprobado 19 Oct 2021 · 17 horas" data-en="Completed 19 Oct 2021 · 17 hours">Aprobado 19 Oct 2021 · 17 horas</div>
+            </article>
+
+            <article class="card-rec">
+                <a class="rec-thumb-link" href="images/reconocimiento-2.png" data-src="images/reconocimiento-2.png" rel="noopener noreferrer">
+                    <img class="rec-thumb" src="images/reconocimiento-2.png" alt="Reconocimiento 2">
+                </a>
+                <h3 class="rec-title" data-es="Curso Pre-Intermedio: Gramática" data-en="Pre-Intermediate Course: Grammar">Pre-Intermediate Course: Grammar</h3>
+                <div class="rec-issuer" data-es="Platzi" data-en="Platzi">Platzi</div>
+                <div class="rec-year" data-es="Aprobado 5 Oct 2021 · 17 horas" data-en="Completed 5 Oct 2021 · 17 hours">Aprobado 5 Oct 2021 · 17 horas</div>
+            </article>
+
+            <article class="card-rec">
+                <a class="rec-thumb-link" href="images/reconocimiento-3.png" data-src="images/reconocimiento-3.png" rel="noopener noreferrer">
+                    <img class="rec-thumb" src="images/reconocimiento-3.png" alt="Reconocimiento 3">
+                </a>
+                <h3 class="rec-title" data-es="Estrategias para aprender inglés en línea" data-en="Strategies to Learn English Online">Strategies to Learn English Online</h3>
+                <div class="rec-issuer" data-es="Platzi" data-en="Platzi">Platzi</div>
+                <div class="rec-year" data-es="Aprobado 20 Oct 2021 · 12 horas" data-en="Completed 20 Oct 2021 · 12 hours">Aprobado 20 Oct 2021 · 12 horas</div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- PUBLICACIONES -->
+<section class="publicaciones" id="publicaciones">
+    <div class="contenedor-publicaciones">
+        <h2 data-es="Publicaciones" data-en="Publications"></h2>
+        <p data-es="Artículos y contribuciones relacionadas con mis proyectos y buenas prácticas en desarrollo web." data-en="Articles and contributions related to my projects and best practices in web development."></p>
+
+        <div class="pub-grid">
+            <article class="pub-item">
+                <h3 class="pub-title" data-es="Buenas prácticas en validación de formularios web" data-en="Best practices in web form validation">Buenas prácticas en validación de formularios web</h3>
+                <div class="pub-meta" data-es="Artículo · 2024" data-en="Article · 2024">Artículo · 2024</div>
+                <p class="pub-extract" data-es="Guía práctica sobre validaciones del lado cliente y servidor, centrada en accesibilidad y usabilidad — aplicada en el proyecto \"Gestión de Administrativa de Usuarios\"." data-en="Practical guide on client- and server-side validations, focused on accessibility and usability — applied in the 'User Administration Management' project.">Guía práctica sobre validaciones del lado cliente y servidor, centrada en accesibilidad y usabilidad — aplicada en el proyecto "Gestión de Administrativa de Usuarios".</p>
+                <a class="pub-link" data-es="Ver proyecto" data-en="View project" href="proyectos/sistema-insc/sistema-inscripcion.html" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+            </article>
+
+            <article class="pub-item">
+                <h3 class="pub-title" data-es="Estrategias de QA para aplicaciones académicas" data-en="QA strategies for academic applications">Estrategias de QA para aplicaciones académicas</h3>
+                <div class="pub-meta" data-es="Publicación técnica · 2023" data-en="Technical publication · 2023">Publicación técnica · 2023</div>
+                <p class="pub-extract" data-es="Resumen de técnicas de pruebas funcionales y flujos de validación usadas en \"Sistema Académico\" para asegurar la calidad y estabilidad antes del despliegue." data-en="Summary of functional testing techniques and validation flows used in 'Academic System' to ensure quality and stability before deployment.">Resumen de técnicas de pruebas funcionales y flujos de validación usadas en "Sistema Académico" para asegurar la calidad y estabilidad antes del despliegue.</p>
+                <a class="pub-link" data-es="Ver repositorio" data-en="View repository" href="https://github.com/0Undertaker0/sistema_academic" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+            </article>
+
+            <article class="pub-item">
+                <h3 class="pub-title" data-es="Optimización y SEO para portafolios personales" data-en="Optimization and SEO for personal portfolios">Optimización y SEO para portafolios personales</h3>
+                <div class="pub-meta" data-es="Entrada de blog · 2024" data-en="Blog post · 2024">Entrada de blog · 2024</div>
+                <p class="pub-extract" data-es="Artículo con consejos sobre metadatos, atributos ALT y rendimiento (Lighthouse) aplicado al portafolio para mejorar visibilidad profesional." data-en="Article with tips on metadata, ALT attributes and performance (Lighthouse) applied to the portfolio to improve professional visibility.">Artículo con consejos sobre metadatos, atributos ALT y rendimiento (Lighthouse) aplicado al portafolio para mejorar visibilidad profesional.</p>
+                <a class="pub-link" data-es="Contactar para más info" data-en="Contact for more info" href="#contacto">Contactar para más info</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER NUEVO -->
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div class="footer-info">
+            <h3 data-es="Contacto" data-en="Contact">Contacto</h3>
+            <p data-es="Si deseas contactarme para proyectos, colaboraciones o oportunidades académicas, puedes hacerlo a través de mis redes." data-en="If you wish to contact me for projects, collaborations or academic opportunities, you can do so through my networks.">
+                Si deseas contactarme para proyectos, colaboraciones o oportunidades académicas,
+                puedes hacerlo a través de mis redes.
+            </p>
+
+            <div class="estado">
+                <span class="dot"></span>
+                <span data-es="Disponible" data-en="Available">Disponible</span>
+            </div>
+        </div>
+
+        <div class="footer-links">
+
+            <a href="https://github.com/0Undertaker0" target="_blank" data-es="Github" data-en="Github">Github</a>
+            <a href="https://www.linkedin.com/in/brian-solano-4241423b4/" target="_blank" data-es="LinkedIn" data-en="LinkedIn">LinkedIn</a>
+            <a href="https://mail.google.com/mail/?view=cm&to=Alesolano980@gmail.com" data-es="Email" data-en="Email">Email</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <span>Copyright © 2026 - Portafolio Brian Solano</span>
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+<script src="idioma.js"></script>
+
+
+</body>
+</html>

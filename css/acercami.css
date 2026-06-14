@@ -1,0 +1,244 @@
+
+
+/* ABOUT SECTION */
+.acerca-mi{
+    background:#2E3453;
+    color:white;
+    padding:80px;
+}
+
+.about-container{
+    display:flex;
+    align-items:center;
+    gap:60px;
+}
+
+/*contenedor*/
+.profile-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+/**/
+.profile-bg{
+    display: block;
+    border-radius:30px;
+    top:-10px;
+    left:-10px;
+}
+
+.bg-rojo{
+    display: block;
+    position: absolute;
+     width:280px !important;
+    height:280px !important;
+    background:#EA5D4C; 
+     border-radius:30px;
+    
+    left:-10px;
+    rotate: 80deg;
+    z-index: 1;
+}
+
+.profile-card {
+    position: relative; /* Añadido: para que el botón se posicione respecto a esta tarjeta */
+    display: inline-block;
+}
+
+.img-br {
+    display: block;
+    width: 260px !important;
+    height: auto;
+    border-radius: 20px;
+    position: relative; 
+    z-index: 3;
+}
+
+/*boton de descargar cv*/
+.btn-cv-download {
+    color: #344FA0;
+    width: 10.5em;
+    height: 2.9em;
+    background-color: #FFFBFA;
+    border-radius: 11px;
+    transition: all 0.6s ease;
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -20px; /* Cambiado: ahora negativo para que sobresalga */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Ajuste fino para centrar */
+    text-decoration: none;
+}
+
+.btn-cv-download:hover {
+    background:  linear-gradient(#2E3453, #344FA0);
+    color: #FFFBFA;
+    cursor: pointer;
+}
+
+.btn-cv-download svg {
+    width: 1.6em;
+    position: absolute;
+    left: 10px; /* Posiciona el icono a la izquierda */
+    transition: all 0.6s ease;
+}
+
+.btn-cv-download:hover svg {
+    transform: translateX(5px);
+}
+
+.text {
+    margin-left: 20px; /* Espacio para el icono */
+}
+
+/**/
+.about-text{
+    flex:1;
+    
+}
+
+.about-text h2{
+    font-size:26px;
+    margin-bottom:15px;
+    position:relative;
+}
+
+.about-text h2::after{
+    content:"";
+    width:60px;
+    height:3px;
+    background:#EA5D4C;
+    position:absolute;
+    left:0;
+    bottom:-6px;
+}
+
+.about-text h3{
+    margin-bottom:15px;
+    font-weight:500;
+}
+
+.about-text p{
+    line-height:1.6;
+    font-weight:300;
+}
+
+.tag{
+    margin-top:25px;
+    background:#344FA0;
+    display:inline-block;
+    padding:8px 20px;
+    border-radius:5px;
+    font-size:13px;
+}
+
+/* SKILLS */
+/* CONTENEDOR */
+.skill-list{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap:20px;
+    max-width:900px;
+    margin:auto;
+    padding: 20px;
+}
+
+/* CARD */
+.skill{
+    background:#ffffff;
+    border-radius:14px;
+    padding:16px 18px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border:1px solid rgba(0,0,0,0.05);
+
+    transition: all 0.3s ease;
+    animation: fadeUp 0.6s ease forwards;
+
+}
+
+/* TOP (texto + porcentaje) */
+.skill-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.skill-top span:first-child{
+    font-weight:600;
+    color:#2E3453;
+}
+
+.percent{
+    font-size:13px;
+    font-weight:700;
+    color:#EA5D4C;
+}
+
+/* BARRA */
+.bar{
+    width:100%;
+    height:8px;
+    background:#eee;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+/* RELLENO */
+.fill{
+    height:100%;
+    width:0;
+    border-radius:10px;
+
+    background: linear-gradient(90deg, #344FA0, #EA5D4C);
+
+    animation: loadBar 1.2s ease forwards;
+}
+
+/* NIVELES */
+.skill:nth-child(1) .fill{ width:95%; }
+.skill:nth-child(2) .fill{ width:90%; }
+.skill:nth-child(3) .fill{ width:85%; }
+.skill:nth-child(4) .fill{ width:80%; }
+.skill:nth-child(5) .fill{ width:75%; }
+
+/* HOVER BONITO */
+.skill:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(46,52,83,0.15);
+    border-color:#344FA0;
+}
+
+/* ANIMACIONES */
+@keyframes loadBar{
+    from{ width:0; }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* Responsive */
+@media(max-width:900px){
+    .about-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .skills h2{
+        text-align:center;
+    }
+}
+

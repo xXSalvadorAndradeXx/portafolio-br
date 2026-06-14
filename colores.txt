@@ -1,0 +1,4 @@
+blanco: #FFFBFA
+azul oscuro: #2E3453
+azul: #344FA0
+rojo: #EA5D4C
