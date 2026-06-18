@@ -6,6 +6,12 @@
     <title>Brian Rivera | Portafolio</title>
     <meta name="description" content="Portafolio de Brian Rivera: proyectos de frontend y backend, QA y desarrollo web. Cursando cuarto año de Ingeniería en Sistemas y Redes Informáticas.">
     <meta name="keywords" content="Portafolio, Brian Rivera, Frontend, Backend, QA, proyectos, Ingeniería en Sistemas, cuarto año">
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Brian Rivera | Portafolio">
+    <meta property="og:description" content="Portafolio de Brian Rivera: proyectos de frontend y backend, QA y desarrollo web.">
+    <meta property="og:image" content="images/logo/br-rojo.svg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -284,6 +290,42 @@
                 <a href="https://www.linkedin.com/in/brian-solano-4241423b4/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><img src="images/2-20625_linkedin-logo-hd-png-download.png" alt="LinkedIn" width="24" height="24" loading="lazy"></a>
                 <a href="https://github.com/0Undertaker0" target="_blank" aria-label="GitHub" rel="noopener noreferrer"><img src="images/github-2-t2z6hpd4v4di5xrcqyqzq9.webp" alt="GitHub" width="24" height="24" loading="lazy"></a>
             </div>
+            <!-- Formulario agregado (envío por Formspree) -->
+            <div class="form-wrapper">
+                <form id="contactForm" action="https://formspree.io/f/xgobjlal" method="POST" novalidate>
+                    <div class="form-row">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="subject" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="message" rows="6" required minlength="20"></textarea>
+                    </div>
+
+                    <div id="contactFeedback" role="status" aria-live="polite"></div>
+
+                    <button type="submit" class="btn-enviar">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de intereses profesionales (agregada mínimamente) -->
+    <section class="intereses" id="intereses">
+        <div class="contenedor-intereses">
+            <h2 data-es="Intereses profesionales" data-en="Professional interests">Intereses profesionales</h2>
+            <p>Intereses: Desarrollo web (Frontend/Backend), aseguramiento de calidad (QA), accesibilidad, optimización y SEO, integración de APIs y aprendizaje continuo en tecnologías modernas.</p>
         </div>
     </section>
 

@@ -89,25 +89,72 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, { passive: true });
 
-    // ============ SMOOTH SCROLL MEJORADO ============
+    // ============ CONTROL DE SECCIONES (reemplaza scroll para navegación) ============
+    // Mostrar solo la sección activa cuando se presiona un enlace del menú
+    const allSections = document.querySelectorAll('section[id]');
+
+    const showSection = (id) => {
+        const target = document.getElementById(id);
+        if (!target) return;
+
+        allSections.forEach(sec => {
+            if (sec === target) {
+                sec.hidden = false;
+                sec.classList.add('visible-section');
+                sec.setAttribute('aria-hidden', 'false');
+                sec.tabIndex = -1;
+            } else {
+                sec.hidden = true;
+                sec.classList.remove('visible-section');
+                sec.setAttribute('aria-hidden', 'true');
+            }
+        });
+
+        // Actualizar estado del menú
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.classList.remove('active');
+                link.removeAttribute('aria-current');
+            }
+        });
+
+        // Llevar la vista a la sección mostrada (mantener el contenido existente)
+        try {
+            const headerHeight = header ? header.offsetHeight : 0;
+            const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8;
+            window.scrollTo({ top: targetTop, behavior: 'smooth' });
+            target.focus();
+            history.replaceState(null, '', `#${id}`);
+        } catch (err) {}
+    };
+
+    // Interceptar clicks en enlaces ancla del menú y mostrar secciones
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const target = document.querySelector(targetId);
-            if (target) {
-                const headerHeight = header.offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            const id = href.replace('#', '');
+            // Cerrar menú si está abierto
+            if (nav.classList.contains('active')) closeMenu();
+            showSection(id);
         });
     });
+
+    // Inicializar sección visible según hash o inicio
+    const initialId = (location.hash && location.hash.length > 1) ? location.hash.replace('#','') : 'inicio';
+    setTimeout(() => {
+        // Marcar todas como ocultas primero
+        allSections.forEach(s => { s.hidden = true; s.setAttribute('aria-hidden','true'); });
+        showSection(initialId);
+    }, 50);
+
+    // Nota: se elimina el bloqueo global de scroll/teclas para permitir
+    // que el usuario pueda desplazarse dentro de la sección actualmente visible.
+    // Las demás secciones permanecen ocultas y solo se muestran usando el menú.
 
     // ============ NAVBAR ACTIVO CON INTERSECTION OBSERVER ============
     const sections = document.querySelectorAll('section[id]');
@@ -165,15 +212,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============ FORMULARIO DE CONTACTO ============
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+        contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const nombre = document.getElementById('nombre')?.value.trim();
             const email = document.getElementById('email')?.value.trim();
+            const asunto = document.getElementById('asunto')?.value.trim();
             const mensaje = document.getElementById('mensaje')?.value.trim();
             const feedback = document.getElementById('contactFeedback');
 
-            if (!nombre || !email || !mensaje) {
+            if (!nombre || !email || !asunto || !mensaje) {
                 if (feedback) {
                     feedback.textContent = '⚠️ Por favor completa todos los campos.';
                     feedback.style.color = '#EA5D4C';
@@ -193,18 +241,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const subject = encodeURIComponent('Contacto desde portafolio: ' + nombre);
-            const body = encodeURIComponent('Nombre: ' + nombre + '\nEmail: ' + email + '\n\n' + mensaje);
-            const mailto = `mailto:Alesolano980@gmail.com?subject=${subject}&body=${body}`;
-
-            window.location.href = mailto;
-
-            if (feedback) {
-                feedback.textContent = '✅ ¡Gracias! Tu mensaje está listo para enviar.';
-                feedback.style.color = '#10b981';
-                feedback.setAttribute('role', 'status');
+            if (mensaje.length < 20) {
+                if (feedback) {
+                    feedback.textContent = '⚠️ El mensaje debe contener al menos 20 caracteres.';
+                    feedback.style.color = '#EA5D4C';
+                    feedback.setAttribute('role', 'alert');
+                }
+                return;
             }
-            contactForm.reset();
+
+            // Envío a Formspree
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    if (feedback) {
+                        feedback.textContent = '✅ ¡Gracias! Tu mensaje ha sido enviado.';
+                        feedback.style.color = '#10b981';
+                        feedback.setAttribute('role', 'status');
+                    }
+                    contactForm.reset();
+                } else {
+                    const data = await response.json().catch(() => ({}));
+                    if (feedback) {
+                        const msg = data?.errors ? (data.errors.map(err => err.message).join(', ')) : 'Error al enviar el mensaje. Por favor intenta nuevamente.';
+                        feedback.textContent = '⚠️ ' + msg;
+                        feedback.style.color = '#EA5D4C';
+                        feedback.setAttribute('role', 'alert');
+                    }
+                }
+            } catch (err) {
+                if (feedback) {
+                    feedback.textContent = '⚠️ Error de red. Intenta nuevamente más tarde.';
+                    feedback.style.color = '#EA5D4C';
+                    feedback.setAttribute('role', 'alert');
+                }
+            }
         });
     }
 
