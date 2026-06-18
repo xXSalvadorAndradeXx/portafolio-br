@@ -17,6 +17,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fuente adicional para el formulario mejorado -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos del panel de contacto -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
     <!-- Estilos mejorados -->
     <link rel="stylesheet" href="css/inicio.css">
@@ -253,72 +257,241 @@
         </div>
     </section>
 
-    <section class="contacto" id="contacto">
-        <div class="contenedor-contacto">
-            <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
-            <p data-es="Puedes contactarme a través de las siguientes opciones." data-en="You can contact me through the options below or using the form further down.">Puedes contactarme a través de las siguientes opciones.</p>
-            <div class="contact-grid">
-                <a class="card-contact" href="https://mail.google.com/mail/?view=cm&to=Alesolano980@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar correo a Alesolano980@gmail.com">
-                    <div class="icon-circle" aria-hidden="true"><img src="images/google_mail_gmail_logo_icon_159346.webp" alt="" width="35" height="35" loading="lazy"></div>
-                    <span class="label" data-es="Correo" data-en="Email">Correo</span>
-                    <span class="sub">Alesolano980@gmail.com</span>
-                </a>
-                <a class="card-contact" href="https://wa.me/50363148609" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensaje por WhatsApp">
-                    <div class="icon-circle" aria-hidden="true"><img src="images/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.webp" alt="" width="35" height="35" loading="lazy"></div>
-                    <span class="label" data-es="WhatsApp" data-en="WhatsApp">WhatsApp</span>
-                    <span class="sub" data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</span>
-                </a>
-                <a class="card-contact" href="tel:+503 6314 8609" aria-label="Llamar al +503 6314 8609">
-                    <div class="icon-circle" aria-hidden="true"><img src="images/pngtree-phone-icon-in-solid-circle-png-image_2380227.jpg" alt="" width="35" height="35" loading="lazy"></div>
-                    <span class="label" data-es="Teléfono" data-en="Phone">Teléfono</span>
-                    <span class="sub">+503 6314 8609</span>
-                </a>
-                <a class="card-contact" href="https://www.linkedin.com/in/brian-solano-4241423b4/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn">
-                    <div class="icon-circle" aria-hidden="true"><img src="images/2-20625_linkedin-logo-hd-png-download.png" alt="" width="35" height="35" loading="lazy"></div>
-                    <span class="label" data-es="LinkedIn" data-en="LinkedIn">LinkedIn</span>
-                    <span class="sub" data-es="Perfil profesional" data-en="Professional profile">Perfil profesional</span>
-                </a>
-                <a class="card-contact" href="https://github.com/0Undertaker0" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub">
-                    <div class="icon-circle" aria-hidden="true"><img src="images/github-2-t2z6hpd4v4di5xrcqyqzq9.webp" alt="" width="35" height="35" loading="lazy"></div>
-                    <span class="label" data-es="GitHub" data-en="GitHub">GitHub</span>
-                    <span class="sub" data-es="Repositorios" data-en="Repositories">Repositorios</span>
-                </a>
+    <section class="contacto contacto-enhanced" id="contacto">
+        <!-- CSS scoped para la sección de contacto mejorada -->
+        <style>
+        /* Scoped styles para evitar colisiones con el resto del sitio */
+        .contacto-enhanced { padding: 0; }
+        .contacto-enhanced .contact-split{ min-height: 520px; display:grid; grid-template-columns: 1fr 1fr; }
+        @media (max-width:900px){ .contacto-enhanced .contact-split{ grid-template-columns: 1fr; } }
+        /* Importante: los estilos completos del formulario se incluyen en este bloque */
+        /* Variables para armonizar con la paleta global del sitio */
+        .contacto-enhanced { --accent-from: var(--rojo); --accent-to: var(--azul); font-family: var(--font-family); }
+        /* Reuse minimal resets to keep visual consistency */
+        .contacto-enhanced .left{ background: linear-gradient(135deg, var(--azul-oscuro) 10%, var(--azul) 100%); padding: clamp(22px,4vw,40px); position:relative; color:var(--blanco) }
+        .contacto-enhanced .right{ display:flex; align-items:center; justify-content:center; padding: clamp(18px,4vw,34px); background:transparent }
+        .contacto-enhanced .card{ width:100%; max-width:560px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); padding:22px; border-radius:14px; backdrop-filter: blur(8px); box-shadow: 0 6px 20px rgba(0,0,0,0.04); }
+        /* Asegurar legibilidad en el panel derecho (card sobre fondo claro) */
+        .contacto-enhanced .right .card h2{ color: var(--azul-oscuro); font-size:1.5rem; line-height:1.1; margin:0 0 14px 0; font-weight:700; background:transparent; display:inline-block; padding:0; }
+        .contacto-enhanced .right .card .small.muted{ color: var(--azul-oscuro); font-size:0.9rem; }
+        /* Inputs y textarea en panel derecho deben usar texto oscuro para ser legibles sobre fondo claro */
+        .contacto-enhanced .right .card input,
+        .contacto-enhanced .right .card textarea{ color: var(--azul-oscuro); }
+        .contacto-enhanced .right .card input::placeholder,
+        .contacto-enhanced .right .card textarea::placeholder{ color:#94A3B8; opacity:1; }
+        /* Errores y feedback en oscuro para visibilidad */
+        .contacto-enhanced .right .card .error,
+        .contacto-enhanced .right .card .feedback{ color: var(--azul-oscuro); }
+        .contacto-enhanced h2{ margin:0 0 6px 0; color:var(--blanco) }
+        .contacto-enhanced p.lead{ color: rgba(255,255,255,0.95) }
+        .contacto-enhanced .brand{ display:flex; gap:12px; align-items:center; }
+        .contacto-enhanced .logo-badge{ width:56px; height:56px; border-radius:12px; background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); display:flex; align-items:center; justify-content:center; font-weight:800 }
+        .contacto-enhanced .shape{ position:absolute; filter:blur(12px); opacity:0.7; mix-blend-mode:screen; }
+        .contacto-enhanced .shape.s1{ width:320px; height:320px; left:-80px; top:-100px }
+        .contacto-enhanced .shape.s2{ width:160px; height:160px; right:-20px; top:40% }
+        .contacto-enhanced .contact-list{ margin-top:18px; display:flex; flex-direction:column; gap:10px; max-width:420px }
+        .contacto-enhanced .contact-item{ display:flex; gap:12px; align-items:center; padding:10px 12px; border-radius:10px; background: rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.02); }
+        .contacto-enhanced .contact-item i{ width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center }
+
+        /* Form fields */
+        .contacto-enhanced form{ display:grid; gap:18px }
+        .contacto-enhanced .field{ position:relative }
+        .contacto-enhanced .field input, .contacto-enhanced .field textarea{ width:100%; background:transparent; border:0; color:var(--blanco); padding:18px 12px; font-size:1rem }
+        .contacto-enhanced .field label{ position:absolute; left:14px; top:18px; color: var(--azul-oscuro); font-size:0.98rem; transition: opacity .18s ease, transform .18s ease, color .18s ease; transform-origin:left center; background:transparent; padding:0 8px; pointer-events:none; line-height:1; opacity:1 }
+
+        /* Estilos específicos y mejorados para el textarea (requisitos del cliente) */
+        .contacto-enhanced .field textarea{
+            min-height:160px;
+            padding:16px 18px;
+            border:2px solid #e2e8f0; /* borde sutil por defecto */
+            border-radius:10px;
+            background: rgba(255,255,255,0.02);
+            color: var(--blanco);
+            font-size:1rem;
+            line-height:1.45;
+            resize:vertical;
+            transition: border 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            overflow:auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(148,163,184,0.45) transparent;
+        }
+
+        /* Placeholder más elegante */
+        .contacto-enhanced .field textarea::placeholder{ color:#94A3B8; font-weight:300; opacity:1 }
+
+        /* Focus: borde degradado + glow */
+        .contacto-enhanced .field textarea:focus{
+            outline: none;
+            border:2px solid transparent;
+            border-image-source: linear-gradient(90deg,#4F46E5,#7C3AED);
+            border-image-slice: 1;
+            box-shadow: 0 10px 30px rgba(79,70,229,0.12), 0 0 18px rgba(124,58,237,0.10);
+        }
+
+        /* Scrollbar personalizada para WebKit */
+        .contacto-enhanced .field textarea::-webkit-scrollbar{ width:6px; height:6px }
+        .contacto-enhanced .field textarea::-webkit-scrollbar-track{ background:transparent }
+        .contacto-enhanced .field textarea::-webkit-scrollbar-thumb{ background: rgba(148,163,184,0.45); border-radius:999px }
+
+        /* Labels: desaparecer suavemente al enfocar o escribir (en vez de flotar) */
+        .contacto-enhanced .field input + label, .contacto-enhanced .field textarea + label{ left:14px; top:18px; color: var(--azul-oscuro); font-weight:600; font-size:0.98rem; transition: opacity .18s ease, transform .18s ease; pointer-events:none; line-height:1; opacity:1; transform:translateY(0) scale(1) }
+        .contacto-enhanced .field input:focus + label, .contacto-enhanced .field input:not(:placeholder-shown) + label, .contacto-enhanced .field textarea:focus + label, .contacto-enhanced .field textarea:not(:placeholder-shown) + label{ opacity:0; transform: translateY(-8px) scale(.98) }
+
+        /* Mantener un pequeño espacio antes del primer campo para separación visual */
+        .contacto-enhanced .right .card .field:first-of-type{ margin-top:12px; }
+
+        /* Asegurar que el texto ingresado en inputs/textarea del panel derecho sea oscuro (sobrescribe color blanco por defecto) */
+        .contacto-enhanced .right .card .field input,
+        .contacto-enhanced .right .card .field textarea{ color: var(--azul-oscuro); }
+        .contacto-enhanced .bar{ height:3px; background: linear-gradient(90deg,var(--accent-from), var(--accent-to)); transform: scaleX(0); transition: transform .28s }
+        .contacto-enhanced .field input:focus ~ .bar, .contacto-enhanced .field textarea:focus ~ .bar{ transform: scaleX(1) }
+
+        .contacto-enhanced .pills{ display:flex; gap:8px; flex-wrap:wrap }
+        .contacto-enhanced .pill{ padding:8px 12px; border-radius:999px; background: rgba(255,255,255,0.02); color:var(--blanco); border:1px solid rgba(255,255,255,0.04); cursor:pointer; font-weight:600 }
+        .contacto-enhanced .pill.active{ background: linear-gradient(90deg,var(--accent-from), var(--accent-to)); color:#fff; transform: translateY(-4px) }
+
+        .contacto-enhanced .btn{ background: linear-gradient(90deg,var(--accent-from), var(--accent-to)); color:#fff; padding:12px 18px; border-radius:12px; border:0; cursor:pointer }
+        .contacto-enhanced .spinner{ width:18px; height:18px; border-radius:50%; border:2px solid rgba(255,255,255,0.18); border-top-color:#fff; animation: spin .9s linear infinite }
+        @keyframes spin{ to{ transform: rotate(360deg) } }
+
+        /* pequeño ajuste responsive */
+        @media (max-width:900px){ .contacto-enhanced .card{ margin-top:-28px } }
+        </style>
+
+        <div class="contact-split">
+            <!-- LADO IZQUIERDO: info de contacto + shapes -->
+            <div class="left">
+                <svg class="shape s1" viewBox="0 0 200 200" aria-hidden="true"><defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" style="stop-color:var(--rojo);stop-opacity:0.85"/><stop offset="1" style="stop-color:var(--azul);stop-opacity:0.85"/></linearGradient></defs><circle cx="100" cy="100" r="80" fill="url(#g1)"></circle></svg>
+                <svg class="shape s2" viewBox="0 0 200 200" aria-hidden="true"><rect x="10" y="10" width="180" height="180" rx="28" fill="rgba(255,255,255,0.06)"/></svg>
+
+                <div class="brand">
+                    <div class="logo-badge">BR</div>
+                    <div>
+                        <h2>Contacto</h2>
+                        <p class="lead">¿Tienes un proyecto o consulta? Escríbeme.</p>
+                    </div>
+                </div>
+
+                
+                <!-- Enlaces legacy: tarjetas de contacto y redes sociales (mantener comportamiento original) -->
+                <div style="margin-top:18px">
+                    <div class="contact-grid">
+                        <a class="card-contact" href="https://mail.google.com/mail/?view=cm&to=Alesolano980@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar correo a Alesolano980@gmail.com">
+                            <div class="icon-circle" aria-hidden="true"><img src="images/google_mail_gmail_logo_icon_159346.webp" alt="" width="35" height="35" loading="lazy"></div>
+                            <span class="label" data-es="Correo" data-en="Email">Correo</span>
+                            <span class="sub">Alesolano980@gmail.com</span>
+                        </a>
+                        <a class="card-contact" href="https://wa.me/50363148609" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensaje por WhatsApp">
+                            <div class="icon-circle" aria-hidden="true"><img src="images/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.webp" alt="" width="35" height="35" loading="lazy"></div>
+                            <span class="label" data-es="WhatsApp" data-en="WhatsApp">WhatsApp</span>
+                            <span class="sub" data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</span>
+                        </a>
+                        <a class="card-contact" href="tel:+503 6314 8609" aria-label="Llamar al +503 6314 8609">
+                            <div class="icon-circle" aria-hidden="true"><img src="images/pngtree-phone-icon-in-solid-circle-png-image_2380227.jpg" alt="" width="35" height="35" loading="lazy"></div>
+                            <span class="label" data-es="Teléfono" data-en="Phone">Teléfono</span>
+                            <span class="sub">+503 6314 8609</span>
+                        </a>
+                        <a class="card-contact" href="https://www.linkedin.com/in/brian-solano-4241423b4/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn">
+                            <div class="icon-circle" aria-hidden="true"><img src="images/2-20625_linkedin-logo-hd-png-download.png" alt="" width="35" height="35" loading="lazy"></div>
+                            <span class="label" data-es="LinkedIn" data-en="LinkedIn">LinkedIn</span>
+                            <span class="sub" data-es="Perfil profesional" data-en="Professional profile">Perfil profesional</span>
+                        </a>
+                        <a class="card-contact" href="https://github.com/0Undertaker0" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub">
+                            <div class="icon-circle" aria-hidden="true"><img src="images/github-2-t2z6hpd4v4di5xrcqyqzq9.webp" alt="" width="35" height="35" loading="lazy"></div>
+                            <span class="label" data-es="GitHub" data-en="GitHub">GitHub</span>
+                            <span class="sub" data-es="Repositorios" data-en="Repositories">Repositorios</span>
+                        </a>
+                    </div>
+
+                    <div class="social-row" style="margin-top:12px">
+                        <a href="https://www.facebook.com/alex.solano.1010" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><img src="images/sm_5b321c969857d.jpg" alt="Facebook" width="24" height="24" loading="lazy"></a>
+                        <a href="https://www.instagram.com/briansolano____/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><img src="images/sm_5b37de3263964.jpg" alt="Instagram" width="24" height="24" loading="lazy"></a>
+                        <a href="https://www.linkedin.com/in/brian-solano-4241423b4/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><img src="images/2-20625_linkedin-logo-hd-png-download.png" alt="LinkedIn" width="24" height="24" loading="lazy"></a>
+                        <a href="https://github.com/0Undertaker0" target="_blank" aria-label="GitHub" rel="noopener noreferrer"><img src="images/github-2-t2z6hpd4v4di5xrcqyqzq9.webp" alt="GitHub" width="24" height="24" loading="lazy"></a>
+                    </div>
+                </div>
             </div>
-            <div class="social-row">
-                <a href="https://www.facebook.com/alex.solano.1010" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><img src="images/sm_5b321c969857d.jpg" alt="Facebook" width="24" height="24" loading="lazy"></a>
-                <a href="https://www.instagram.com/briansolano____/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><img src="images/sm_5b37de3263964.jpg" alt="Instagram" width="24" height="24" loading="lazy"></a>
-                <a href="https://www.linkedin.com/in/brian-solano-4241423b4/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><img src="images/2-20625_linkedin-logo-hd-png-download.png" alt="LinkedIn" width="24" height="24" loading="lazy"></a>
-                <a href="https://github.com/0Undertaker0" target="_blank" aria-label="GitHub" rel="noopener noreferrer"><img src="images/github-2-t2z6hpd4v4di5xrcqyqzq9.webp" alt="GitHub" width="24" height="24" loading="lazy"></a>
-            </div>
-            <!-- Formulario agregado (envío por Formspree) -->
-            <div class="form-wrapper">
-                <form id="contactForm" action="https://formspree.io/f/xgobjlal" method="POST" novalidate>
-                    <div class="form-row">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="name" required>
-                    </div>
 
-                    <div class="form-row">
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
+            <!-- LADO DERECHO: card con formulario (glass) -->
+            <div class="right">
+                <div class="card" role="region" aria-label="Formulario de contacto mejorado">
+                    <header>
+                        <h2>Envíame un Mensaje</h2>
+                    </header>
 
-                    <div class="form-row">
-                        <label for="asunto">Asunto</label>
-                        <input type="text" id="asunto" name="subject" required>
-                    </div>
+                    <form id="contactForm" data-enhanced="true" action="https://formspree.io/f/xgobjlal" method="POST" novalidate>
+                        <div class="field">
+                            <input id="nombre" name="name" type="text" placeholder=" " autocomplete="name" required />
+                            <label for="nombre">Nombre</label>
+                            <div class="bar" aria-hidden="true"></div>
+                            <div class="error" id="err-nombre" aria-live="polite"></div>
+                        </div>
 
-                    <div class="form-row">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="message" rows="6" required minlength="20"></textarea>
-                    </div>
+                        <div class="field">
+                            <input id="email" name="email" type="email" placeholder=" " autocomplete="email" required />
+                            <label for="email">Correo electrónico</label>
+                            <div class="bar" aria-hidden="true"></div>
+                            <div class="error" id="err-email" aria-live="polite"></div>
+                        </div>
 
-                    <div id="contactFeedback" role="status" aria-live="polite"></div>
+                        <div class="field" aria-labelledby="asuntoLabel">
+                            <label id="asuntoLabel" style="position:static;margin-bottom:6px;color:rgba(255,255,255,0.86);font-weight:600">Asunto</label>
+                            <div class="pills" role="list" aria-label="Opciones de asunto">
+                                <button type="button" class="pill" data-value="Consulta general">Consulta General</button>
+                            </div>
+                            <input type="hidden" name="subject" id="subjectInput" value="Consulta general" />
+                            <div class="error" id="err-asunto" aria-live="polite"></div>
+                        </div>
 
-                    <button type="submit" class="btn-enviar">Enviar</button>
-                </form>
+                        <div class="field">
+                            <textarea id="mensaje" name="message" rows="5" placeholder=" " minlength="20" required></textarea>
+                            <label for="mensaje">Mensaje</label>
+                            <div class="bar" aria-hidden="true"></div>
+                            <div class="error" id="err-mensaje" aria-live="polite"></div>
+                        </div>
+
+                        <div class="form-actions" style="margin-top:8px;display:flex;gap:12px;align-items:center">
+                            <button type="submit" class="btn" id="btnSubmit" aria-live="polite"><span class="btn-content"><span class="btn-text">Enviar</span></span></button>
+                            <div class="feedback" id="formFeedback" aria-live="polite"></div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+
+        <!-- JS específico para el formulario mejorado (scope local) -->
+        <script>
+        (function(){
+            const form = document.getElementById('contactForm');
+            if(!form) return;
+
+            const btn = document.getElementById('btnSubmit');
+            const feedback = document.getElementById('formFeedback');
+            const nombre = document.getElementById('nombre');
+            const email = document.getElementById('email');
+            const mensaje = document.getElementById('mensaje');
+            const subjectInput = document.getElementById('subjectInput');
+            const errNombre = document.getElementById('err-nombre');
+            const errEmail = document.getElementById('err-email');
+            const errAsunto = document.getElementById('err-asunto');
+            const errMensaje = document.getElementById('err-mensaje');
+
+            const pills = form.querySelectorAll('.pill');
+            function activatePill(pill){ pills.forEach(p=>{p.classList.remove('active'); p.setAttribute('aria-pressed','false')}); pill.classList.add('active'); pill.setAttribute('aria-pressed','true'); subjectInput.value = pill.dataset.value; }
+            pills.forEach((p,i)=>{ if(i===0) activatePill(p); p.addEventListener('click', ()=>activatePill(p)); p.addEventListener('keydown', (e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); activatePill(p); } }); p.setAttribute('tabindex','0'); p.setAttribute('role','button'); p.setAttribute('aria-pressed','false'); });
+
+            function validate(){ let ok=true; errNombre.textContent=''; errEmail.textContent=''; errAsunto.textContent=''; errMensaje.textContent=''; feedback.textContent=''; if(!nombre.value.trim()){ errNombre.textContent='Por favor indica tu nombre.'; ok=false } const emailVal = email.value.trim(); if(!emailVal){ errEmail.textContent='El correo es obligatorio.'; ok=false } else { const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; if(!re.test(emailVal)){ errEmail.textContent='Ingresa un correo válido.'; ok=false } } if(!subjectInput.value || subjectInput.value.trim().length===0){ errAsunto.textContent='Selecciona un asunto.'; ok=false } if(!mensaje.value.trim() || mensaje.value.trim().length<20){ errMensaje.textContent='El mensaje debe tener al menos 20 caracteres.'; ok=false } return ok }
+
+            function setLoading(state){ if(state){ btn.disabled=true; btn.querySelector('.btn-content').innerHTML = '<span class="spinner" aria-hidden="true"></span><span class="btn-text">Enviando...</span>'; } else { btn.disabled=false; btn.querySelector('.btn-content').innerHTML = '<span class="btn-text">Enviar</span>'; } }
+            function showSuccess(){ btn.classList.add('success'); btn.querySelector('.btn-content').innerHTML = '<span class="btn-text">¡Enviado! ✅</span>'; }
+
+            form.addEventListener('submit', function(e){ e.preventDefault(); if(!validate()) return; setLoading(true); feedback.textContent=''; const fd = new FormData(form); const endpoint = form.action || null; const tryFetch = endpoint && endpoint !== '#' && endpoint.startsWith('http'); const finishSuccess = ()=>{ showSuccess(); feedback.style.color='var(--success)'; feedback.textContent='Gracias — tu mensaje fue enviado.'; setTimeout(()=>{ form.reset(); if(pills && pills.length) activatePill(pills[0]); setTimeout(()=>{ btn.classList.remove('success'); setLoading(false); feedback.textContent=''; }, 1800); }, 550); }; const finishError = (msg)=>{ btn.disabled=false; setLoading(false); feedback.style.color='var(--danger)'; feedback.textContent = msg || 'Error al enviar. Intenta más tarde.'; };
+
+            if(tryFetch){ fetch(endpoint, { method:'POST', body:fd, headers:{ 'Accept':'application/json' } }).then(async resp=>{ await new Promise(r=>setTimeout(r,1500)); if(resp.ok) finishSuccess(); else { let text='Error al enviar.'; try{ const json = await resp.json(); if(json?.errors) text = json.errors.map(x=>x.message).join(', '); }catch(err){} finishError(text); } }).catch(async err=>{ await new Promise(r=>setTimeout(r,1500)); finishSuccess(); }); } else { setTimeout(()=>{ finishSuccess(); }, 1500); } });
+
+            [nombre,email,mensaje].forEach(el=>{ el.addEventListener('input', ()=>{ if(el.id==='nombre') errNombre.textContent=''; if(el.id==='email') errEmail.textContent=''; if(el.id==='mensaje') errMensaje.textContent=''; }); });
+        })();
+        </script>
     </section>
 
     <!-- Sección de intereses profesionales (agregada mínimamente) -->

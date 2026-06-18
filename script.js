@@ -211,7 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ============ FORMULARIO DE CONTACTO ============
     const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
+    // Si el formulario tiene el atributo data-enhanced, usamos el handler local incluido
+    if (contactForm && !contactForm.dataset.enhanced) {
         contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
