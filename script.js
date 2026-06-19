@@ -402,9 +402,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
         });
 
-        // Auto-advance
+        // Auto-advance (desactivado)
         const startAutoAdvance = () => {
-            autoAdvance = setInterval(next, 5000);
+            // Rotación automática desactivada intencionalmente.
+            // autoAdvance = setInterval(next, 5000);
         };
         
         const resetAutoAdvance = () => {
